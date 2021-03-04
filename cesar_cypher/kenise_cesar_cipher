@@ -1,0 +1,18 @@
+secret = "I hear the gooseberries are doing well this year, and so are the mangoes."
+cipher = 7
+abc = 'abcdefghijklmnopqrstuvwxyz'
+result = ''
+for char in secret.lower():
+  if char.isalpha():
+    i = abc.index(char)
+    if i + 7 >= 26:
+      j = i + 7 - 26
+      #print(abc[j])
+      result += abc[j]
+    else:
+      j = i + 7
+      #print(abc[j])
+      result += abc[j]
+  else:
+    result += char
+print(result)
