@@ -7,11 +7,9 @@ for char in secret.lower():
     i = abc.index(char)
     if i + 7 >= 26:
       j = i + 7 - 26
-      #print(abc[j])
       result += abc[j]
     else:
       j = i + 7
-      #print(abc[j])
       result += abc[j]
   else:
     result += char
