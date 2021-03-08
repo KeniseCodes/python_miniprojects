@@ -1,0 +1,37 @@
+import random
+
+user_input = int(input("Enter your hand (0 = scissor, 1 = rock, 2 = paper): "))
+
+def get_hand(hand):
+    # 0 = scissor, 1 = rock, 2 = paper
+  if hand == 0:
+    return "scissor"
+  elif hand == 1:
+   return "rock"
+  elif hand == 2:
+    return "paper"
+    # for example if the variable hand is 0, it should return the string "scissor"
+    
+  
+def determine_winner(hand1, hand2):
+  if hand1 == hand2:
+    print(f"You both played {hand1}. It's a tie.")
+  elif hand1 == "scissor":
+    if hand2 == "rock":
+      print(f"You played {hand1}. PC played {hand2}. PC Won!")
+    elif hand2 == "paper":
+      print(f"You played {hand1}. PC played {hand2}. You won!")
+  elif hand1 == "rock":
+    if hand2 == "scissor":
+      print(f"You played {hand1}. PC played {hand2}. PC Won!")
+    elif hand2 == "paper":
+      print(f"You played {hand1}. PC played {hand2}. You won!")
+  elif hand1 == "paper":
+    if hand2 == "scissor":
+      print(f"You played {hand1}. PC played {hand2}. PC Won!")
+    elif hand2 == "rock":
+      print(f"You played {hand1}. PC played {hand2}. You won!")
+
+user_hand = get_hand(user_input)
+pc_hand = get_hand(random.randrange(0,2))
+winner = determine_winner(user_hand, pc_hand)
